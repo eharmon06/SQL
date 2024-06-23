@@ -1,0 +1,19 @@
+# Which companies have paid time off days or healthcare benefits?
+SELECT company_name
+FROM fortune_companies
+WHERE paid_time_off_days
+OR healthcare_benefits
+;
+
+# What is the avergae employee tenure in the technology industry?
+SELECT company_name, AVG(avg_employee_tenure)
+FROM fortune_companies
+WHERE industry ="Technology"
+;
+
+# What is the percentage in the technology companies for maternity leave?
+SELECT company_name
+,ROUND(maternity_leave_weeks,100) as maternity_leave
+FROM fortune_companies
+WHERE company_name="Technology"
+;
